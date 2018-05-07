@@ -25,8 +25,10 @@ const NavigationAuth = () =>
     <li class="nav-item"><Link to={routes.ACCOUNT} class="nav-link">Account</Link></li>
     <li class="nav-item"><Link to={routes.CUSTOMER} class="nav-link">Customers</Link></li>
     <li class="nav-item"><Link to={routes.TRAINING} class="nav-link">Trainings</Link></li>
-    <li class="nav-item"><Link to={routes.CALENDAR} class="nav-link">Calendar</Link></li>   
-    <li class="nav-item"><SignOutButton /></li>
+    <li class="nav-item"><Link to={routes.CALENDAR} class="nav-link">Calendar</Link></li>  
+   
+    <li class="nav-item" style= {{marginLeft: 580}}><SignOutButton /></li>
+    
    </ul>
   </div>
 </nav>

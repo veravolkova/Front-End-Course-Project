@@ -8,8 +8,11 @@ import withAuthorization from '../Session/withAuthorization';
 
 const AccountPage = ({ authUser }) =>
   <div>
-    <h1>Account: {authUser.email}</h1>
+    <h3>Account: {authUser.email}</h3>
+    <br></br>
+    <h4>Restore Password:</h4>
     <PasswordForgetForm />
+    <h4>Change Password:</h4>
     <PasswordChangeForm />
   </div>
 

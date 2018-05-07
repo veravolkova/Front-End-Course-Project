@@ -16,7 +16,7 @@ class Edittraining extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        const training = { date: this.state.date, duration: this.state.duration, activity: this.state.activity, customer: this.state.customer };
+        const training = { date: this.state.date, activity: this.state.activity, customer: this.state.customer };
         this.props.updateTraining(this.props.link, training);
         this.simpleDialog.hide();
     }

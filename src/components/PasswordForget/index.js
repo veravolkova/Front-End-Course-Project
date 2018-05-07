@@ -5,7 +5,7 @@ import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
 
 const PasswordForgetPage = () =>
-<div class = "container"  style={{display: 'block', width: 350, marginTop: 115, marginBottom: 115, marginLeft: 'auto', marginRight: 'auto'}} >
+<div class = "container"  style={{display: 'block', width: 350, marginTop: 115, marginBottom: 115, marginLeft: 'auto', marginRight: 'auto'}} > 
     <h2>Forgot password?</h2> 
     <PasswordForgetForm />
   </div>
@@ -54,14 +54,14 @@ class PasswordForgetForm extends Component {
       <form onSubmit={this.onSubmit} >
        <div class="form-horizontal">
         <input
-          class="form-control" style={{width: 320}}
+          class="form-control" 
+          style={{width: 320}}
           value={this.state.email}
           onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
           type="text"
-          placeholder="Email Address"
-        />
-         <br/>
-        <button  type="submit" class="btn btn-primary" class="btn btn-primary" style={{width: 320}}>
+          placeholder="Email Address"        />
+        
+        <button  type="submit" class="btn btn-primary"  style={{width: 320, marginTop: 8}} >
          {/* disabled={isInvalid} */}
           Reset My Password
         </button>

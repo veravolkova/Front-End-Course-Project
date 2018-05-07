@@ -103,9 +103,7 @@ class Customer extends Component {
   }
 
 
-
   updateCustomer = (link, customer) => {
-
     console.log(link);
     console.log(customer);
 

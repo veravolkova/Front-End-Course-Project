@@ -62,6 +62,7 @@ updateTraining = (link, training) => {
     const b = 'https://customerrest.herokuapp.com/api/trainings/' + link
 
     console.log(link);
+    console.log(b);
     console.log(training);
   
     
@@ -70,7 +71,13 @@ updateTraining = (link, training) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(training)
+        body: JSON.stringify(
+          {
+            'date': this.state.date,
+            'activity': this.state.activity,
+            'duration': this.state.duration,
+            'customer': link,
+          })
       })
       .then(
         toast.success("Changes saved", {
@@ -79,14 +86,7 @@ updateTraining = (link, training) => {
       )
       .then(res => this.loadTrainings())
       .catch( err => console.error(err))
-    }
-
-  // forMatting = (date) => {
-  //   var d = new Date();
-  //   d.setTime(date);
-  //   return d;
-  //    } 
-    
+    } 
 
 render() { 
 
@@ -135,7 +135,7 @@ Cell: ({value}) => (<button type="button" className="btn btn-danger" onClick={ (
     sortable: false, 
     filterable: false,     
     accessor: "id",
-    Cell: ({ row, value }) => (<Edittraining updateTraining={this.updateTraining} link={value} training = {row} />)
+    Cell: ({ row, value }) => (<Edittraining updateTraining={this.updateTraining} link = {value} training = {row} />)
   },
   
 
