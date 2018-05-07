@@ -8,7 +8,7 @@ import { auth, db } from '../../firebase';
 import * as routes from '../../constants/routes';
 
 const SignUpPage = ({ history }) =>
-<div class = "container"  style={{display: 'block', width: 200, marginTop: 15, marginBottom: 15, marginLeft: 'auto', marginRight: 'auto'}} >
+<div class = "container"  style={{display: 'block', width: 350, marginTop: 115, marginBottom: 115, marginLeft: 'auto', marginRight: 'auto'}} >
     <h1>SignUp</h1>
     <SignUpForm history={history} />
   </div>
@@ -80,7 +80,7 @@ class SignUpForm extends Component {
       email === '';
 
     return (
-
+      <div class = "container"  style={{display: 'block', width: 350, marginTop: 15, marginBottom: 15, marginLeft: 'auto', marginRight: 'auto'}} >
       <div class="form-group">
       <form onSubmit={this.onSubmit}>
         <input
@@ -90,6 +90,7 @@ class SignUpForm extends Component {
           type="text"
           placeholder="Full Name"
         />
+         <br/>
         <input
           value={email}
           class="form-control" 
@@ -97,6 +98,7 @@ class SignUpForm extends Component {
           type="text"
           placeholder="Email Address"
         />
+         <br/>
         <input
           value={passwordOne}
           class="form-control" 
@@ -104,6 +106,7 @@ class SignUpForm extends Component {
           type="password"
           placeholder="Password"
         />
+         <br/>
         <input
           value={passwordTwo}
           class="form-control" 
@@ -111,6 +114,7 @@ class SignUpForm extends Component {
           type="password"
           placeholder="Confirm Password"
         />
+         <br/>
         <button  class="btn btn-primary" type="submit">
         {/* disabled={isInvalid} */}
           Sign Up
@@ -118,6 +122,7 @@ class SignUpForm extends Component {
 
         { error && <p>{error.message}</p> }
       </form>
+      </div>
       </div>
     );
   }

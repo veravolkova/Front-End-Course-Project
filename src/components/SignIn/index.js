@@ -6,7 +6,7 @@ import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
 
 const SignInPage = ({ history }) =>
-<div class = "container"  style={{display: 'block', width: 200, marginTop: 15, marginBottom: 15, marginLeft: 'auto', marginRight: 'auto'}} >
+<div class = "container"  style={{display: 'block', width: 350, marginTop: 115, marginBottom: 115, marginLeft: 'auto', marginRight: 'auto'}} >
     {/* <nav class="navbar navbar-dark bg-dark"> */}
     <h1>Sign In</h1>
     <SignInForm history={history} />
@@ -66,7 +66,7 @@ class SignInForm extends Component {
       email === '';
 
     return (  
-      <div class = "container"  style={{display: 'block', width: 200, marginTop: 15, marginBottom: 15, marginLeft: 'auto', marginRight: 'auto'}} >
+      <div class = "container"  style={{display: 'block', width: 350, marginTop: 15, marginBottom: 15, marginLeft: 'auto', marginRight: 'auto'}} >
      
       <form onSubmit={this.onSubmit}>
  
@@ -78,6 +78,7 @@ class SignInForm extends Component {
           type="text"
           placeholder="Email Address"
         />
+         <br/>
         <input
           value={password}
           onChange={event => this.setState(updateByPropertyName('password', event.target.value))}
@@ -86,7 +87,7 @@ class SignInForm extends Component {
           placeholder="Password"
         />
          </div>
-        <button disabled={isInvalid} type="submit" class="btn btn-primary">
+        <button disabled={isInvalid} type="submit" class="btn btn-primary" style={{width: 320}}>
           Sign In
         </button>
 

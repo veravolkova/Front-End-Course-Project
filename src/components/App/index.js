@@ -32,7 +32,7 @@ const App = () =>
       <Route exact path={routes.CUSTOMER} component={() => <Customer />} />
       <Route exact path={routes.CALENDAR} component={() => <Calendar />} />
       <Route exact path={routes.TRAINING} component={() => <Training />} />
-      <hr/>
+      <br/>
     
 
     </div>

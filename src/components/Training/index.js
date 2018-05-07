@@ -93,7 +93,7 @@ render() {
 
 return ( 
 <div className="container"> 
-<h2>My trainings</h2> 
+{/* <h2>My trainings</h2>  */}
 <div className ="row"> 
 
 <CSVLink data={this.state.trainings} >Download csv</CSVLink> 

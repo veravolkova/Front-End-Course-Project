@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
-import Customer from '../Customer';
-import Calendar from '../Calendar';
-import Training from '../Training';
+// import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+// import Customer from '../Customer';
+// import Calendar from '../Calendar';
+// import Training from '../Training';
 
 import withAuthorization from '../Session/withAuthorization';
 import { db } from '../../firebase';
@@ -23,7 +23,7 @@ class HomePage extends Component {
 
     return (
       <div>        
-        <BrowserRouter>
+        {/* <BrowserRouter>
           <div>
 
           <nav class="navbar navbar-dark bg-dark">        
@@ -40,7 +40,7 @@ class HomePage extends Component {
               <Route path="/training" component={Training} />
             </Switch>
           </div>
-        </BrowserRouter>    
+        </BrowserRouter>     */}
 
         <h1>Home</h1>
         <p>The Home Page is accessible by every signed in user.</p>

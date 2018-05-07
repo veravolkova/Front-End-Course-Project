@@ -1,7 +1,9 @@
 import React from 'react';
 
 const LandingPage = () =>
-  <div>
+ <div class="container">
+    {/* <div class="jumbotron"> */}
+    {/* </div> */}
     <h1>Landing</h1>
     <p>The Landing Page is open to everyone, even though the user isn't signed in.</p>
   </div>

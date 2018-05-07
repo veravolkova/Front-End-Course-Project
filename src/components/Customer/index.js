@@ -8,7 +8,10 @@ import Addcustomer from '../Addcustomer';
 import Addtraining from '../Addtraining';
 import Editcustomer from '../Editcustomer';
 import { CSVLink, CSVDownload } from 'react-csv';
-
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
+import withAuthorization from '../Session/withAuthorization';
+import { db } from '../../firebase';
 
 class Customer extends Component {
 
@@ -147,7 +150,7 @@ class Customer extends Component {
 
     return (
       <div className="container">
-        <h2>My customers</h2>
+        {/* <h2>My customers</h2> */}
         <div className="row">
           <Addcustomer addCustomer={this.addCustomer} />
           <CSVLink data={this.state.customers} >Download csv</CSVLink>
