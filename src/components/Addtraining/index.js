@@ -36,7 +36,7 @@ class Addtraining extends React.Component {
         <form>
         
          <div className = "form-group">
-        <input placeholder = "Date" className = "form-control" name="date"  onChange = {this.handleChange} />
+        <input placeholder = "DD.MM.YYYY" className = "form-control" name="date"  onChange = {this.handleChange} />
          </div>
 
          <div className = "form-group">

@@ -1,10 +1,12 @@
 import React from 'react';
 import SkyLight from 'react-skylight';
+import moment from 'moment';
+
 
 class Edittraining extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { date: this.props.training.date, duration: this.props.training.duration, activity: this.props.training.activity, customer: this.props.training.customer }
+        this.state = { date: this.props.training.date, duration: this.props.training.duration, activity: this.props.training.activity }
     }
 
     handleChange = (event) => {
@@ -15,8 +17,9 @@ class Edittraining extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-
-        const training = { date: this.state.date, activity: this.state.activity, customer: this.state.customer };
+        console.log(this.state.date);
+        const training = { date: moment(this.state.date).format(), duration: this.state.duration, activity: this.state.activity };
+        console.log(this.state.date);
         this.props.updateTraining(this.props.link, training);
         this.simpleDialog.hide();
     }
@@ -37,9 +40,9 @@ class Edittraining extends React.Component {
                         <div className="form-group">
                             <input placeholder="Activity" value={this.state.activity} className="form-control" name="activity" onChange={this.handleChange} />
                         </div>
-                        <div className="form-group">
+                        {/* <div className="form-group">
                             <input placeholder="Customer" value={this.state.customer} className="form-control" name="customer" onChange={this.handleChange} />
-                        </div>
+                        </div> */}
 
                         <button className="btn btn-primary" onClick={this.handleSubmit}>Save</button>
                     </form>
@@ -51,3 +54,4 @@ class Edittraining extends React.Component {
 }
 
 export default Edittraining;
+

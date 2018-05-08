@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Navigation from '../Navigation';
 import LandingPage from '../Landing';
@@ -19,10 +19,9 @@ import './index.css';
 const App = () =>
   <Router>
     <div className="app">
-      <Navigation />  
-    
+      <Navigation />
 
-       <hr/>
+      <hr />
       <Route exact path={routes.LANDING} component={() => <LandingPage />} />
       <Route exact path={routes.SIGN_UP} component={() => <SignUpPage />} />
       <Route exact path={routes.SIGN_IN} component={() => <SignInPage />} />
@@ -32,8 +31,8 @@ const App = () =>
       <Route exact path={routes.CUSTOMER} component={() => <Customer />} />
       <Route exact path={routes.CALENDAR} component={() => <Calendar />} />
       <Route exact path={routes.TRAINING} component={() => <Training />} />
-      <br/>
-    
+      <br />
+
 
     </div>
   </Router>

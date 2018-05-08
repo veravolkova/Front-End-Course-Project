@@ -6,11 +6,11 @@ import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'; 
 import Edittraining from '../Edittraining'; 
 import {CSVLink, CSVDownload} from 'react-csv'; 
-import moment from 'moment';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
-import withAuthorization from '../Session/withAuthorization';
-import { db } from '../../firebase';
+// import moment from 'moment';
+// import { connect } from 'react-redux';
+// import { compose } from 'recompose';
+// import withAuthorization from '../Session/withAuthorization';
+// import { db } from '../../firebase';
 
 
 class Training extends Component { 
@@ -18,7 +18,7 @@ class Training extends Component {
 constructor(props) { 
 super(props); 
 this.state = { 
-trainings: [] 
+trainings: []
 }; 
 } 
 
@@ -59,26 +59,19 @@ deleteTraining = (value) => {
 
 updateTraining = (link, training) => {
    
-    const b = 'https://customerrest.herokuapp.com/api/trainings/' + link
+    const b = 'https://customerrest.herokuapp.com/api/trainings/' + link     
 
     console.log(link);
-    console.log(b);
-    console.log(training);
-  
+    console.log(b);   
+    console.log(training);  
     
       fetch(b , 
       { method: 'PUT', 
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(
-          {
-            'date': this.state.date,
-            'activity': this.state.activity,
-            'duration': this.state.duration,
-            'customer': link,
-          })
-      })
+      
+      body : JSON.stringify(training)}) 
       .then(
         toast.success("Changes saved", {
           position: toast.POSITION.BOTTOM_LEFT
@@ -103,6 +96,10 @@ data={this.state.trainings}
 filterable 
 columns={[{ 
 columns: [  
+  // {
+  //   accessor: "links[0].href",
+  //   show: false
+  // },
    {  
     id: 'date', 
     Header: "Date", 
@@ -134,7 +131,7 @@ Cell: ({value}) => (<button type="button" className="btn btn-danger" onClick={ (
     id: 'button',
     sortable: false, 
     filterable: false,     
-    accessor: "id",
+    accessor: "id", 
     Cell: ({ row, value }) => (<Edittraining updateTraining={this.updateTraining} link = {value} training = {row} />)
   },
   

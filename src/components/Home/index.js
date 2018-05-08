@@ -19,7 +19,7 @@ class HomePage extends Component {
   }
 
   render() {
-    const { users } = this.props;
+    // const { users } = this.props;
 
     return (
       <div>        

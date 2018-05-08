@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
-import withAuthorization from '../Session/withAuthorization';
-import { db } from '../../firebase';
+// import { connect } from 'react-redux';
+// import { compose } from 'recompose';
+// import withAuthorization from '../Session/withAuthorization';
+// import { db } from '../../firebase';
 
 BigCalendar.momentLocalizer(moment);
 const allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k]);

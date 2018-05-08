@@ -8,10 +8,10 @@ import Addcustomer from '../Addcustomer';
 import Addtraining from '../Addtraining';
 import Editcustomer from '../Editcustomer';
 import { CSVLink, CSVDownload } from 'react-csv';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
-import withAuthorization from '../Session/withAuthorization';
-import { db } from '../../firebase';
+// import { connect } from 'react-redux';
+// import { compose } from 'recompose';
+// import withAuthorization from '../Session/withAuthorization';
+// import { db } from '../../firebase';
 
 class Customer extends Component {
 
